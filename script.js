@@ -8,8 +8,8 @@ function staticLoadPlaces() {
         {
             name: 'Magnemite',
             location: {
-                lat: 15.9035952,
-                lng: 100.2488222,
+                lat: 15.90359,
+                lng: 100.24882,
                 // lat: 15.90355871,
                 // lng: 100.24873441,
             }
@@ -29,7 +29,7 @@ function renderPlaces(places) {
         model.setAttribute('gltf-model', './ARModels/magnemite/scene.gltf');
         model.setAttribute('rotation', '0 180 0');
         // model.setAttribute('animation-mixer', '');
-        model.setAttribute('scale', '0.3 0.3 0.3');
+        model.setAttribute('scale', '0.4 0.4 0.4');
 
         model.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
