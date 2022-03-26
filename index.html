@@ -18,23 +18,23 @@
       arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;"
     >
       <a-assets timeout="10000">
-        <!-- <a-asset-item
-          id="animated-asset"
-          src="/ARModels/magnemite/scene.gltf"
-        ></a-asset-item> -->
         <a-asset-item
+          id="animated-asset"
+          src="/ARModels/articuno/scene.gltf"
+        ></a-asset-item>
+        <!-- <a-asset-item
           id="pirate-obj"
           src="/ARModels/piratePack/pirate_captain.obj"
         ></a-asset-item>
         <a-asset-item
           id="pirate-mtl"
           src="/ARModels/piratePack/pirate_captain.mtl"
-        ></a-asset-item>
+        ></a-asset-item> -->
       </a-assets>
 
       <a-entity
         look-at="[gps-camera]"
-        obj-model="obj: #pirate-obj; mtl: #pirate-mtl"
+        gltf-model="#animated-asset"
         scale="0.14768864307354904 0.14768864307354904 0.14768864307354904"
         gps-entity-place="latitude: 15.9035343; longitude: 100.2486177;"
       ></a-entity>
