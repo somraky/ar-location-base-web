@@ -17,10 +17,10 @@
       loading-screen="enabled: false;"
       arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;"
     >
-      <!-- <a-assets>
+      <a-assets>
         <a-asset-item
           id="animated-asset"
-          src="https://cdn.aframe.io/test-models/models/glTF-2.0/virtualcity/VC.gltf"
+          src="/ARModels/dragonite/scene.gltf"
         ></a-asset-item>
       </a-assets>
 
@@ -30,13 +30,13 @@
         gltf-model="#animated-asset"
         scale="0.14768864307354904 0.14768864307354904 0.14768864307354904"
         gps-entity-place="latitude: 15.9035343; longitude: 100.2486177;"
-      ></a-entity> -->
+      ></a-entity>
 
-      <a-box
+      <!-- <a-box
         look-at="[gps-camera]"
         scale="150 150 150"
         gps-entity-place="latitude: 15.9035343; longitude: 100.2486177;"
-      ></a-box>
+      ></a-box> -->
 
       <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
