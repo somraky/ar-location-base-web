@@ -44,9 +44,11 @@
     </a-scene>
     <script>
       // window.addEventListener("load", () => {
+      console.log("run script");
       const text = document.getElementById("text");
       text.addEventListener("gps-entity-place-update-positon", (event) => {
         console.log("gps-entity-place-update-positon");
+        console.log("distanceMsg", text.getAttribute("distanceMsg"));
         document.getElementById(
           "debug"
         ).textContent = `${event.detail.distance}m`;
