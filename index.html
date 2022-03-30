@@ -7,6 +7,7 @@
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <script src="script.js"></script>
     <style>
       #debug {
         position: fixed;
@@ -58,19 +59,5 @@
 
       <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
-    <script>
-      // window.addEventListener("load", () => {
-      const text = document.getElementById("text");
-      const entity = document.getElementById("entity");
-      entity.addEventListener("gps-entity-place-update-positon", (event) => {
-        console.log("gps-entity-place-update-positon");
-        console.log("distanceMsg", entity.getAttribute("distanceMsg"));
-        document.getElementById(
-          "debug"
-        ).textContent = `${event.detail.distance}m`;
-        text.setAttribute("value", entity.getAttribute("distanceMsg") + " left");
-      });
-      // });
-    </script>
   </body>
 </html>
