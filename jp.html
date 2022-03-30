@@ -43,18 +43,16 @@
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
     <script>
-      window.addEventListener("load", () => {
-        const text = document.getElementById("text");
-        text.addEventListener("gps-entity-place-update-positon", (event) => {
-          document.getElementById(
-            "debug"
-          ).textContent = `${event.detail.distance}m`;
-          text.setAttribute(
-            "value",
-            text.getAttribute("distanceMsg") + " left"
-          );
-        });
+      // window.addEventListener("load", () => {
+      const text = document.getElementById("text");
+      text.addEventListener("gps-entity-place-update-positon", (event) => {
+        console.log("gps-entity-place-update-positon");
+        document.getElementById(
+          "debug"
+        ).textContent = `${event.detail.distance}m`;
+        text.setAttribute("value", text.getAttribute("distanceMsg") + " left");
       });
+      // });
     </script>
   </body>
 </html>
