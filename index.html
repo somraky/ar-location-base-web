@@ -41,11 +41,12 @@
       </a-assets>
 
       <a-entity
+        id="entity"
         obj-model="obj: #pirate-obj; mtl: #pirate-mtl;"
         scale="0.3 0.3 0.3"
         gps-entity-place="latitude: 15.9035343; longitude: 100.2486177;"
       ></a-entity>
-      
+
       <a-text
         id="text"
         value=""
@@ -60,13 +61,14 @@
     <script>
       // window.addEventListener("load", () => {
       const text = document.getElementById("text");
-      text.addEventListener("gps-entity-place-update-positon", (event) => {
+      const entity = document.getElementById("entity");
+      entity.addEventListener("gps-entity-place-update-positon", (event) => {
         console.log("gps-entity-place-update-positon");
-        console.log("distanceMsg", text.getAttribute("distanceMsg"));
+        console.log("distanceMsg", entity.getAttribute("distanceMsg"));
         document.getElementById(
           "debug"
         ).textContent = `${event.detail.distance}m`;
-        text.setAttribute("value", text.getAttribute("distanceMsg") + " left");
+        text.setAttribute("value", entity.getAttribute("distanceMsg") + " left");
       });
       // });
     </script>
