@@ -8,7 +8,7 @@
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <style>
-      #debug {
+      #distance {
         position: fixed;
         z-index: 10000;
         background-color: #fff;
@@ -17,11 +17,21 @@
         left: 0;
         display: block;
       }
+      #position {
+        position: fixed;
+        z-index: 10000;
+        background-color: #fff;
+        padding: 10px;
+        bottom: 0;
+        left: 0;
+        display: block;
+      }
     </style>
   </head>
 
   <body style="margin: 0; overflow: hidden">
-    <div id="debug"></div>
+    <div id="distance">distance</div>
+    <div id="position">position</div>
     <a-scene
       vr-mode-ui="enabled: false"
       embedded
@@ -29,32 +39,33 @@
     >
       <a-box
         material="color: red"
-        gps-entity-place="latitude: 15.9033785; longitude: 100.2485275;"
-        scale="15 15 15"
+        gps-entity-place="latitude: 15.9034205; longitude: 100.2486083;"
+        scale="5 5 5"
       ></a-box>
       <a-text
         id="text"
         value=""
         look-at="[gps-camera]"
         scale="15 15 15"
-        position="0 30 0"
-        gps-entity-place="latitude: 15.9033785; longitude: 100.2485275;"
+        position="0 55 0"
+        gps-entity-place="latitude: 15.9034205; longitude: 100.2486083;"
       ></a-text>
-      <a-camera gps-camera rotation-reader> </a-camera>
+      <a-camera id="camera" gps-camera rotation-reader> </a-camera>
     </a-scene>
     <script>
       window.addEventListener("load", () => {
         const text = document.getElementById("text");
         text.addEventListener("gps-entity-place-update-position", (event) => {
-          console.log("gps-entity-place-update-position");
-          console.log("distanceMsg", text.getAttribute("distanceMsg"));
           document.getElementById(
-            "debug"
+            "distance"
           ).textContent = `${event.detail.distance}m`;
-          text.setAttribute(
-            "value",
-            text.getAttribute("distanceMsg") + " left"
-          );
+          text.setAttribute("value", text.getAttribute("distanceMsg"));
+        });
+
+        const camera = document.getElementById("camera");
+        camera.addEventListener("gps-camera-update-position", (event) => {
+          document.getElementById("position").textContent =
+            event.detail.position;
         });
       });
     </script>
