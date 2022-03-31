@@ -19,47 +19,47 @@ var models = [
         name: 'articuno',
         type: 'gltf',
         url: './ARModels/articuno/scene.gltf',
-        scale: '0.2 0.2 0.2',
+        scale: '0.05 0.05 0.05',
         rotation: '0 180 0',
         location: {
-            lat: 15.9035343,
-            lng: 100.2486177,
+            lat: 15.9034205,
+            lng: 100.2486083,
         }
     },
-    {
-        name: 'dragonite',
-        type: 'gltf',
-        url: './ARModels/dragonite/scene.gltf',
-        scale: '0.08 0.08 0.08',
-        rotation: '0 180 0',
-        location: {
-            lat: 15.9035630,
-            lng: 100.2486811,
-        }
-    },
+    // {
+    //     name: 'dragonite',
+    //     type: 'gltf',
+    //     url: './ARModels/dragonite/scene.gltf',
+    //     scale: '0.08 0.08 0.08',
+    //     rotation: '0 180 0',
+    //     location: {
+    //         lat: 15.9035630,
+    //         lng: 100.2486811,
+    //     }
+    // },
     {
         name: 'magnemite',
         type: 'gltf',
         url: './ARModels/magnemite/scene.gltf',
-        scale: '0.5 0.5 0.5',
+        scale: '0.2 0.2 0.2',
         rotation: '0 180 0',
         location: {
-            lat: 15.9034724,
-            lng: 100.2486033,
+            lat: 15.9036188,
+            lng: 100.2488759,
         }
     },
-    {
-        name: 'pirateCaptain',
-        type: 'obj',
-        mtl: './ARModels/pirateCaptain/pirate_captain.mtl',
-        obj: './ARModels/pirateCaptain/pirate_captain.obj',
-        scale: '0.5 0.5 0.5',
-        rotation: '0 180 0',
-        location: {
-            lat: 15.9033847,
-            lng: 100.2486100,
-        }
-    },
+    // {
+    //     name: 'pirateCaptain',
+    //     type: 'obj',
+    //     mtl: './ARModels/pirateCaptain/pirate_captain.mtl',
+    //     obj: './ARModels/pirateCaptain/pirate_captain.obj',
+    //     scale: '0.5 0.5 0.5',
+    //     rotation: '0 180 0',
+    //     location: {
+    //         lat: 15.9033847,
+    //         lng: 100.2486100,
+    //     }
+    // },
 ]
 
 var setAsset = function (model, asset) {
