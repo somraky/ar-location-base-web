@@ -29,22 +29,21 @@
     >
       <a-box
         material="color: red"
-        gps-entity-place="latitude: 15.90350171; longitude: 100.24856744;"
+        gps-entity-place="latitude: 15.9033785; longitude: 100.2485275;"
         scale="15 15 15"
       ></a-box>
       <a-text
         id="text"
-        value="test"
+        value=""
         look-at="[gps-camera]"
-        scale="30 30 30"
-        position="0 55 0"
-        gps-entity-place="latitude: 15.90350171; longitude: 100.24856744;"
+        scale="15 15 15"
+        position="0 30 0"
+        gps-entity-place="latitude: 15.9033785; longitude: 100.2485275;"
       ></a-text>
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
     <script>
       window.addEventListener("load", () => {
-        console.log("run script");
         const text = document.getElementById("text");
         text.addEventListener("gps-entity-place-update-position", (event) => {
           console.log("gps-entity-place-update-position");
